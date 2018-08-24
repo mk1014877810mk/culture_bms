@@ -1,0 +1,61 @@
+.sidebar ul.sidebar-list > li:nth-child(1) > a {
+  background-color: #555658;
+}
+.content .login-info {
+  background-color: #fff;
+}
+.content .login-info .login-title {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 30px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.content .login-info .login-content {
+  height: 250px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.content .login-info .login-content ul > li {
+  padding: 10px;
+  font-size: 16px;
+}
+.content .login-info .login-content ul > li span:nth-child(1) {
+  display: inline-block;
+  width: 80px;
+}
+.content .login-info .login-content li:nth-child(1) > a {
+  margin-left: 50px;
+  color: #09f;
+}
+.content .fast-ability {
+  margin-top: 20px;
+  background-color: #fff;
+}
+.content .fast-ability .fast-title {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 30px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.content .fast-ability .fast-content {
+  padding: 30px;
+}
+.content .fast-ability .fast-content > div {
+  display: inline-block;
+  width: 180px;
+  height: 130px;
+  text-align: center;
+  line-height: 90px;
+  vertical-align: middle;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
+.content .fast-ability .fast-content > div span {
+  display: block;
+  line-height: 20px;
+}
+.content .fast-ability .fast-content .add-act {
+  margin-right: 30px;
+}

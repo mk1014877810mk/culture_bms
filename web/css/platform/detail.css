@@ -1,0 +1,65 @@
+.content .detail {
+  min-width: 800px;
+  padding: 40px;
+  background-color: #fff;
+}
+.content .detail .detail-page,
+.content .detail .audit-btn {
+  display: inline-block;
+  width: 45%;
+}
+.content .detail .detail-page {
+  float: left;
+  min-width: 420px;
+}
+.content .detail .detail-page ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.content .detail .detail-page .phone {
+  width: 400px;
+  height: 650px;
+  border: 1px solid #ccc;
+  padding: 14px 10px;
+  box-sizing: border-box;
+  margin: 20px auto;
+}
+.content .detail .detail-page .phone .phone-detail {
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+}
+.content .detail .detail-page .phone .phone-detail .phone-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  word-break: break-all;
+}
+.content .detail .detail-page .phone .phone-detail .phone-content img {
+  width: 96%;
+  margin-top: 10px;
+}
+.content .detail .detail-page .phone .phone-detail .phone-content .phone-text {
+  font-size: 16px;
+  line-height: 26px;
+  text-indent: 2em;
+  margin-top: 10px;
+  text-align: left;
+  word-break: break-all;
+}
+.content .detail .detail-page .phone .phone-detail .phone-content .phone-video {
+  margin-top: 10px;
+}
+.content .detail .detail-page .phone .phone-detail .phone-content .phone-video video {
+  width: 96%;
+}
+.content .detail .audit-btn {
+  padding: 100px 30px;
+  box-sizing: border-box;
+  visibility: hidden;
+}
+.content .detail .audit-btn input {
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+}

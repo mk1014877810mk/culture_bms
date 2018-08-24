@@ -1,0 +1,164 @@
+.sidebar ul.sidebar-list > li:nth-child(3) li:nth-child(1) a {
+  background-color: #555658;
+}
+.content ::-webkit-scrollbar {
+  width: 0px;
+  height: 1px;
+}
+.content .phone {
+  position: relative;
+  width: 400px;
+  height: 650px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow: auto;
+}
+.content .phone .top {
+  position: relative;
+  height: 220px;
+}
+.content .phone .top img {
+  width: 100%;
+  height: 220px;
+}
+.content .phone .top textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ddd;
+  border: none;
+  padding: 20px;
+  box-sizing: border-box;
+  resize: none;
+  background-color: transparent;
+  outline: none;
+}
+.content .phone .top ::-webkit-input-placeholder {
+  color: #ddd;
+}
+.content .phone .top select {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 2px 4px;
+  background-color: #ddd;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.content .phone .top .upload {
+  position: absolute;
+  bottom: 36px;
+  right: 10px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+.content .phone .top .upload input {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px;
+}
+.content .phone .top .upload .file-btn-bgi {
+  z-index: 1;
+  background-color: transparent;
+  color: transparent;
+  opacity: 0;
+  cursor: pointer;
+}
+.content .phone .phone-content {
+  padding: 10px 10px 10px;
+}
+.content .phone .phone-content .phone-bottom-content {
+  min-height: 330px;
+}
+.content .phone .phone-content .phone-bottom-content .content-video {
+  height: 100px;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+}
+.content .phone .phone-content .phone-bottom-content .content-video .video {
+  display: inline-block;
+  height: 100%;
+  width: 200px;
+  text-align: center;
+}
+.content .phone .phone-content .phone-bottom-content .content-video .video video {
+  height: 100%;
+  max-width: 200px;
+}
+.content .phone .phone-content .phone-bottom-content .content-video .upload-video {
+  float: right;
+  width: 158px;
+  height: 100px;
+  overflow: hidden;
+  background: url('../../../images/edit.png') no-repeat center;
+  text-align: center;
+}
+.content .phone .phone-content .phone-bottom-content .content-video .upload-video input[type='file'] {
+  width: 65px;
+  margin-top: 40px;
+  opacity: 0;
+}
+.content .phone .phone-content .phone-content-btn {
+  padding: 10px 0;
+  background-color: #fff;
+  width: 100%;
+  bottom: 10px;
+  left: 0;
+  height: 30px;
+  text-align: center;
+}
+.content .phone .phone-content .phone-content-btn input {
+  position: relative;
+  width: 42%;
+}
+.content .phone-title-text {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+}
+.content .phone-title-text .phone-title-modal {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 500px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  background-color: #fff;
+  text-align: center;
+}
+.content .phone-title-text .phone-title-modal > span {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.content .phone-title-text .phone-title-modal textarea {
+  width: 90%;
+  height: 32px;
+  padding: 0 10px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  resize: none;
+  line-height: 30px;
+  box-sizing: border-box;
+}

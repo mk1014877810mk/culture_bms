@@ -1,0 +1,330 @@
+.sidebar{
+  ul.sidebar-list{
+    >li:nth-child(3) li:nth-child(1) a{
+      background-color: #555658;
+    }
+  }
+}
+.content{
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 1px;
+  }
+  .phone{
+    position: relative;
+    width: 400px;
+    height: 650px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    .phone-detail{
+      height: 100%;
+      overflow: auto;
+      .top{
+        position: relative;
+        height: 220px;
+        img{
+          width: 100%;
+          height: 220px;
+        }
+        textarea{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 180px;
+          font-size: 20px;
+          font-weight: 600;
+          color: #ddd;
+          border: none;
+          padding: 20px;
+          box-sizing: border-box;
+          resize: none;
+          background-color: transparent;
+          outline: none;
+        }
+        ::-webkit-input-placeholder{
+          color: #ddd;
+        }
+        select{
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          appearance: none;
+          -webkit-appearance: none;
+          padding: 2px 4px;
+          background-color: #ddd;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        .upload{
+          position: absolute;
+          bottom: 36px;
+          right: 10px;
+          background-color: #ddd;
+          cursor: pointer;
+          input{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 70px;
+            border:1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 2px;
+          }
+          .file-btn-bgi{
+            z-index: 1;
+            background-color: transparent;
+            color: transparent;
+            opacity: 0;
+            cursor: pointer;
+          }
+        }
+      }
+      .phone-content{
+        padding: 0 10px 10px;
+        // 文章内容
+        .article{
+          position: relative;
+          height: 102px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 10px;
+          margin-bottom: 40px;
+          >div{
+            height: 102px;
+            // text-align: center;
+            &:nth-child(2){
+              overflow: auto;
+            }
+          }
+          .edit-content-detail{
+            position: absolute;
+            top: 45px;
+            right: 16%;
+            width: 21px;
+            height: 21px;
+            text-indent: 0;
+            overflow: hidden;
+            form{
+              width: 100%;
+              height: 100%;
+              input{
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+              }
+            }
+          }
+          .detail-del{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            text-indent: 0;
+            img{
+              width: 100%;
+              height: 20px;
+              cursor: pointer;
+            }
+          }
+          div.content-text{
+            overflow: hidden;
+            min-height: 102px;
+            text-align: left;
+            text-indent: 2em;
+            .detail-content{
+              // display: inline-block;
+              width: 62%;
+              word-break: break-all;
+            }
+          }
+          .content-pic,.content-video{
+            display: inline-block;
+            width: 61%;
+            text-align: center;
+          }
+          .content-pic img,.content-video video{
+            height: 100%;
+            max-width: 100%;
+          }
+          .content-video+.add-btn{
+            margin-top: -6px;
+          }
+        }
+        // 按钮
+        .add-btn,.article>.add-btn{
+          position: relative;
+          text-align: center;
+          padding: 10px;
+          .img-btn{
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            margin: 10px auto 0;
+            img{
+              width: 100%;
+              height: 100%;
+              user-select: none;
+            }
+          }
+          >div.add-content{
+            position: absolute;
+            padding: 0 4px;
+            left: 50%;
+            top: 53px;
+            display: none;
+            transform: translate(-50%);
+            -webkit-transform: translate(-50%);
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            z-index: 2;
+            >div{
+              display: inline-block;
+              width: 40px;
+              font-size: 0;
+              overflow: hidden;
+              img{
+                margin-top: 4px;
+              }
+              .choose-file{
+                position: absolute;
+                top: 10px;
+                width: 30px;
+                overflow: hidden;
+                input{
+                  opacity: 0;
+                }
+              }
+            }
+            .pic{
+              margin-left: 10px;
+            }
+            .text img{
+              margin-left: -46px;
+            }
+            .video img{
+              margin-left: -92px;
+            }
+            .three{
+              position: absolute;
+              left: 50%;
+              top: -8px;
+              width: 14px;
+              height: 14px;
+              border-left: 1px solid #ddd;
+              border-top: 1px solid #ddd;
+              background-color: #fff;
+              transform: translateX(-50%) rotateZ(45deg);
+            }
+          }
+        }
+        .phone-bottom-content{
+          min-height: 260px;
+        }
+
+      }
+      // 编辑title内容
+      .phone-title-text{
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: rgba(0,0,0,.4);
+        width: 100%;
+        height: 100%;
+        .phone-title-modal{
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          width: 500px;
+          height: 220px;
+          transform: translate(-50%,-50%);
+          -webkit-transform: translate(-50%,-50%);
+          background-color: #fff;
+          text-align: center;
+          >span{
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 30px;
+          }
+          textarea{
+            width: 90%;
+            height: 32px;
+            padding: 0 10px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            resize: none;
+            line-height: 30px;
+            box-sizing: border-box;
+          }
+        }
+      }
+      // 编辑文字内容
+      .phone-content-text{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.4);
+        z-index: 10;
+        .phone-text-bgc{
+          position: absolute;
+          left: 50%;
+          top: 40%;
+          transform: translate(-50%,-50%);
+          width: 500px;
+          height: 400px;
+          background-color: #fff;
+          form{
+            width: 100%;
+            height: 80%;
+            text-align: center;
+          }
+          textarea{
+            width: 90%;
+            height: 100%;
+            margin-top: 20px;
+            resize: none;
+            border:1px solid #ddd;
+            line-height: 30px;
+            background-color: #fefefe;
+            box-sizing: border-box;
+          }
+          .btn{
+            margin-top: 20px;
+            text-align: center;
+          }
+        }
+      }
+    }        
+    // 完成删除按钮
+    .phone-content-btn{
+      display: none;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 5px 0;
+      background-color: #fff;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      input{
+        width:42%;
+        margin-top: 3px;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,129 @@
+.sidebar ul.sidebar-list > li:nth-child(1) li:nth-child(1) a {
+  background-color: #555658;
+}
+.content .content-table {
+  padding: 20px 20px 60px;
+  background-color: #fff;
+}
+.content .content-table .act-find > div {
+  display: inline-block;
+}
+.content .content-table .act-find > div button {
+  width: 80px;
+  height: 30px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.content .content-table .act-find > div button:nth-child(1) {
+  background-color: #09f;
+  color: #fff;
+}
+.content .content-table .act-find > div button:nth-child(2) {
+  background-color: #fff;
+}
+.content .content-table .select-btn {
+  margin: 20px 0;
+}
+.content .content-table .select-btn .dele-many {
+  display: inline-block;
+  padding: 0 10px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.content .content-table .select-btn .dele-many:hover {
+  text-decoration: none;
+}
+.content .content-table .select-btn .cancel-all {
+  display: none;
+}
+.content .content-table .select-btn .blue {
+  background-color: #1890ff;
+  color: #fff;
+}
+.content .content-table .select-table {
+  min-height: 400px;
+}
+.content .content-table .select-table table {
+  width: 100%;
+}
+.content .content-table .select-table table .many {
+  display: none;
+}
+.content .content-table .select-table table .many.show {
+  display: table-cell;
+}
+.content .content-table .select-table table thead > tr {
+  background-color: #fafafa;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.content .content-table .select-table table thead > tr th {
+  text-align: center;
+}
+.content .content-table .select-table table tr {
+  height: 50px;
+  border-bottom: 1px solid #ddd;
+}
+.content .content-table .select-table table tr td {
+  text-align: center;
+}
+.content .content-table .select-table table tr td a {
+  color: #09f;
+}
+.content .content-table .select-table table tr td span {
+  color: #ddd;
+}
+.content .content-table .select-table table tr td img {
+  height: 30px;
+  line-height: 30px;
+}
+.content .content-table .data-page {
+  padding: 20px;
+  margin-top: 20px;
+  text-align: right;
+}
+.content .content-table .data-page span {
+  display: inline-block;
+  min-width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  user-select: none;
+  cursor: pointer;
+}
+.content .content-table .data-page span:nth-last-child(1) {
+  border: none;
+  cursor: default;
+}
+.content .content-table .data-page .page-detail {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -4px;
+}
+.content .content-table .data-page .page-detail span {
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+.content .content-table .data-page .active {
+  background-color: #09f;
+  color: #fff;
+}
+.content .content-table .data-page input {
+  width: 40px;
+  height: 20px;
+  vertical-align: middle;
+  margin: -4px 6px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

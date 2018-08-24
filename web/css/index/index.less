@@ -1,0 +1,69 @@
+.sidebar{
+  ul.sidebar-list{
+    >li:nth-child(1)>a{
+      background-color: #555658;
+    }
+  }
+}
+.content{
+  // 登录信息
+  .login-info{
+    background-color: #fff;
+    .login-title{
+      height: 50px;
+      line-height: 50px;
+      padding-left: 30px;
+      border-bottom: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .login-content{
+      height: 250px;
+      padding: 30px;
+      box-sizing: border-box;
+      ul>li{
+        padding: 10px;
+        font-size: 16px;
+        span:nth-child(1){
+          display: inline-block;
+          width: 80px;
+        }
+      }
+      li:nth-child(1)>a{
+        margin-left: 50px;
+        color: #09f;
+      }
+    }
+  }
+  // 快捷功能
+  .fast-ability{
+    margin-top: 20px;
+    background-color: #fff;
+    .fast-title{
+      height: 50px;
+      line-height:50px;
+      padding-left: 30px;
+      border-bottom: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .fast-content{
+      padding: 30px;
+      >div{
+        display: inline-block;
+        width: 180px;
+        height: 130px;
+        text-align: center;
+        line-height: 90px;
+        vertical-align: middle;
+        background-color: #f2f2f2;
+        border:1px solid #ccc;
+        span{
+          display: block;
+          line-height: 20px;
+        }
+      }
+      .add-act{
+        margin-right: 30px;
+      }
+    }
+  }
+}

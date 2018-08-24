@@ -1,0 +1,245 @@
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-width: 1000px;
+  font: 14px "微软雅黑", HELVETICA;
+  background: #f0f2f5;
+  -webkit-text-size-adjust: 100%;
+}
+a {
+  color: #2d374b;
+  text-decoration: none;
+}
+a:hover {
+  color: #cd0200;
+  text-decoration: underline;
+}
+em {
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+p {
+  word-wrap: break-word;
+}
+.txt-cut-5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+.input-text {
+  width: 300px;
+  height: 30px;
+  padding: 0 6px;
+  box-sizing: border-box;
+  vertical-align: top;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.input-button {
+  width: 80px;
+  height: 30px;
+  outline: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 10px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.input-select {
+  width: 300px;
+  height: 30px;
+  padding-left: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.content-list-title {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.blue {
+  background-color: #09f;
+  color: #fff;
+}
+.red {
+  border: 1px solid #f5222d;
+  color: #f5222d;
+  background-color: #fff;
+}
+.red-text {
+  color: #f5222d!important;
+}
+.active {
+  background-color: #09f;
+  color: #fff;
+}
+.textarea {
+  resize: none;
+  border: 1px solid #ccc;
+}
+.rotate180 {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.header {
+  min-width: 840px;
+  margin-left: 260px;
+}
+.header .head {
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.header .head img {
+  width: 22px;
+}
+.header .head .head-right {
+  float: right;
+}
+.header .head .head-right span,
+.header .head .head-right div {
+  display: inline-block;
+  margin: 0 5px;
+  line-height: 30px;
+  font-size: 16px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.header .head .head-right .pic {
+  width: 28px;
+  height: 28px;
+}
+.header .head .head-right .pic img {
+  display: block;
+  width: 28px;
+  border-radius: 50%;
+}
+.header .head .head-left {
+  line-height: 30px;
+}
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  background-color: #001529;
+  overflow: auto;
+}
+.sidebar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+.sidebar .sidebar-img {
+  width: 100%;
+  margin: 30px auto 0;
+}
+.sidebar .sidebar-img img {
+  width: 100%;
+}
+.sidebar > ul.sidebar-list {
+  margin-bottom: 100px;
+}
+.sidebar > ul.sidebar-list > li a {
+  display: block;
+  padding: 10px;
+  padding-left: 64px;
+  font-size: 16px;
+  color: #fff;
+}
+.sidebar > ul.sidebar-list > li a img {
+  width: 20px;
+  margin-right: 10px;
+  vertical-align: top;
+}
+.sidebar > ul.sidebar-list > li a img:nth-child(2) {
+  float: right;
+  margin-right: 20px;
+}
+.sidebar > ul.sidebar-list > li a:hover {
+  background-color: #2E2F30;
+  text-decoration: none;
+}
+.sidebar > ul.sidebar-list > li > a {
+  padding-left: 34px;
+}
+.nav,
+.content {
+  margin-left: 260px;
+}
+.nav {
+  padding: 20px;
+  background-color: #fff;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+.content {
+  min-width: 760px;
+  padding: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.content .content-sort li.type-select #type_detail {
+  margin-left: 107px!important;
+}
+.content .content-sort li.type-select #type_detail > span:nth-child(1) {
+  margin-right: 10px!important;
+}
+input[type='checkbox'] {
+  cursor: pointer;
+}
