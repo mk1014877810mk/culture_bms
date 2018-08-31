@@ -27,12 +27,10 @@ $(function () {
             res.ajaxUrl = ajaxUrl;
             tableData = res;
             that.paging(tableData.data);
-            that.setPaging(currentPage);
           } else if (res.status == 1003) {
             res.ajaxUrl = ajaxUrl;
             res.data = [];
             tableData = res;
-            that.setPaging(currentPage);
             that.paging(tableData.data);
           }
         },
@@ -162,40 +160,6 @@ $(function () {
         }
       });
 
-      // 点击页码
-      $('.page-detail').on('click', 'span', function () {
-        var tempPage = $(this).data('page');
-        if (!tempPage) return;
-        currentPage = tempPage;
-        $(this).addClass('active').siblings().removeClass('active');
-        that.setPaging(currentPage);
-      });
-
-      // 点击上一页
-      $('#prev').on('click', function () {
-        currentPage--;
-        currentPage = Math.max(currentPage, 1);
-        that.setPaging(currentPage);
-      });
-
-      // 点击下一页
-      $('#next').on('click', function () {
-        currentPage++;
-        currentPage = Math.min(currentPage, allPage);
-        that.setPaging(currentPage);
-      });
-
-      // 输入页码
-      $('#insert_page').on('input', function () {
-        var inputVal = $(this).val();
-        if (inputVal == '') return;
-        inputVal = Math.max(1, inputVal);
-        inputVal = Math.min(allPage, inputVal);
-        currentPage = inputVal;
-        $(this).val(currentPage);
-        that.setPaging(currentPage);
-      });
-
       // 删除数据
       $('#table_data').off('click').on('click', 'a', function () {
         var n_id = $(this).data('n_id');
@@ -280,22 +244,7 @@ $(function () {
     },
     // 分页
     paging: function (tableData) {
-      var that = this;
-      var html = '<span class="active" data-page=1>';
-      allPage = Math.ceil(tableData.length / showCount);
-      if (allPage == 0 || isNaN(allPage)) {
-        $('.page-detail').html('<span class="active">1</span>');
-        allPage = 1;
-        return
-      }
-      for (let i = 0; i < allPage; i++) {
-        if (i == 0) {
-          html += (i + 1) + '</span>';
-        } else {
-          html += '<span data-page=' + (i + 1) + '>' + (i + 1) + '</span> '
-        }
-      };
-      $('.page-detail').html(html);
+      this.loadPage(tableData.length);
     },
     // 设置对应页码的表格数据
     setPaging: function (page) {
@@ -328,6 +277,46 @@ $(function () {
       }
       $('th.many input').prop('checked', false);
     },
+
+    // 加载页码并添加事件
+    loadPage: function (count) {
+      var that = this;
+      allPage = Math.max(Math.ceil(count / showCount), 1);
+      $("#Pagination").pagination(allPage, {
+        num_edge_entries: 2,
+        num_display_entries: 4,
+        prev_text: '<',
+        next_text: '>',
+        callback: pageselectCallback,
+        items_per_page: 1
+      });
+      function pageselectCallback(page) {
+        currentPage = page + 1;
+        that.setPaging(currentPage);
+      }
+
+      // 输入框跳转
+      $('#jump_page').off('input').on('input', function () {
+        var inputVal = $(this).val();
+        if (inputVal == '') return;
+        inputVal = Math.max(1, inputVal);
+        inputVal = Math.min(allPage, inputVal);
+        currentPage = inputVal
+        $(this).val(currentPage);
+        $("#Pagination").pagination(allPage, {
+          num_edge_entries: 2,
+          num_display_entries: 4,
+          prev_text: '<',
+          next_text: '>',
+          current_page: currentPage - 1,
+          callback: pageselectCallback,
+          items_per_page: 1
+        });
+      });
+    },
+
+
+
     // 组合查询数据
     queryGroup: function (obj) {
       var that = this;

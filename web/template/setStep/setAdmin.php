@@ -33,6 +33,10 @@
         <a class="dele-many show">确认删除</a>
         <a class="dele-many" id="delAll">批量操作</a> -->
       </div>
+      <div class="check-name">
+        <span>用户名：</span>
+        <input type="text" class="input-text" id="input_select" placeholder="请输入用户名">
+      </div>
       <div class="select-table">
         <table>
           <thead>

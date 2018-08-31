@@ -6,6 +6,7 @@ $(function () {
   var currentPage = 1;  // 当前页码
   var allPage = 1;  // 总页码
   var firstLoad = true;
+  var stopRequest = false;
   var setAdmin = {
     init: function () {
       this.getData(currentPage);
@@ -77,7 +78,7 @@ $(function () {
       });
       function pageselectCallback(page) {
         currentPage = page + 1;
-        that.getData(currentPage);
+        that.getSelectData(currentPage, stopRequest);
       }
 
       // 输入框跳转
@@ -97,6 +98,15 @@ $(function () {
           callback: pageselectCallback,
           items_per_page: 1
         });
+      });
+
+
+      // 用户名模糊查询
+      $('#input_select').off('input').on('input', function () {
+        currentPage = 1;
+        firstLoad = true;
+        stopRequest = !stopRequest;
+        that.getSelectData(currentPage, stopRequest);
       });
 
       //   // 批量删除按钮
@@ -126,6 +136,61 @@ $(function () {
       //   })
     },
 
+    getSelectData: function (page, flag) {
+      var that = this;
+      var val = $('#input_select').val();
+      if ($.trim(val).length == 0) {
+        this.getData(currentPage);
+        return;
+      }
+      $.ajax({
+        url: ajaxUrl + 'adminlogin/search-user',
+        type: 'post',
+        data: {
+          user_name: val,
+          page: page
+        },
+        success: function (res) {
+          // console.log('模糊查询数据', res);
+          if (res.status == 1000) {
+            res.user_id = user_id;
+            allCount = res.count;
+            for (let i = 0; i < res.data.length; i++) {
+              if (res.data[i].u_id == user_id) {
+                var temp = res.data.splice(i, 1);
+                res.data.unshift(temp[0]);
+                break;
+              }
+            };
+            var adminArr = [], userArr = [];
+            for (var i = 0; i < res.data.length; i++) {
+              if (res.data[i].is_admin == 1) {
+                adminArr.push(res.data[i]);
+              } else {
+                userArr.push(res.data[i]);
+              }
+            };
+            res.data = adminArr.concat(userArr);
+            var html = template('table_tpl', res);
+            $("#table_data").html(html);
+          } else if (res.status == 1003) {
+            var obj = {
+              data: []
+            }
+            var html = template('table_tpl', obj);
+            $("#table_data").html(html);
+          }
+          if (firstLoad && flag == stopRequest) {
+            that.loadPage(res.count);
+            firstLoad = false;
+          }
+        },
+        error: function (err) {
+          console.log('模糊查询数据获取失败', err);
+        }
+      });
+    },
+
     // 提升、降级、删除管理员
     upOrDownOrDelAdmin: function () {
       var that = this;
@@ -144,7 +209,7 @@ $(function () {
             success: function (res) {
               // console.log('提升或降级', res);
               if (res.status == 1000) {
-                that.getData(currentPage);
+                that.getSelectData(currentPage, stopRequest);
               }
             },
             error: function (err) {
@@ -166,7 +231,7 @@ $(function () {
                     --currentPage;
                     that.loadPage(--allCount);
                   }
-                  that.getData(currentPage);
+                  that.getSelectData(currentPage, stopRequest);
                 }
               },
               error: function (err) {

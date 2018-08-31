@@ -1,6 +1,6 @@
 $(function () {
-  // var ajaxUrl = 'http://172.16.1.168/wenbo/frontend/web/';
-  var ajaxUrl = 'https://wh.broadmesse.net/wenbo/frontend/web/';
+  var ajaxUrl = 'http://172.16.1.168/wenbo/frontend/web/';
+  // var ajaxUrl = 'https://wh.broadmesse.net/wenbo/frontend/web/';
   window.sessionStorage.setItem("ajaxUrl", ajaxUrl);
   // 头部功能
   var header = {

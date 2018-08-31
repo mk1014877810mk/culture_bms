@@ -49,6 +49,17 @@
   background-color: #1890ff;
   color: #fff;
 }
+.content .content-table .check-name {
+  margin-bottom: 20px;
+}
+.content .content-table .check-name span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 30px;
+}
+.content .content-table .check-name input {
+  width: 180px;
+}
 .content .content-table .select-table {
   min-height: 400px;
 }

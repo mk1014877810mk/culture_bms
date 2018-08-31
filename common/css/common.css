@@ -23,7 +23,7 @@ select {
 }
 body {
   min-width: 1000px;
-  font: 14px "微软雅黑", HELVETICA;
+  font: 12px "微软雅黑", HELVETICA;
   background: #f0f2f5;
   -webkit-text-size-adjust: 100%;
 }
@@ -151,7 +151,7 @@ p {
   display: inline-block;
   margin: 0 5px;
   line-height: 30px;
-  font-size: 16px;
+  font-size: 14px;
   vertical-align: middle;
   cursor: pointer;
 }
@@ -199,7 +199,7 @@ p {
   display: block;
   padding: 10px;
   padding-left: 64px;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
 }
 .sidebar > ul.sidebar-list > li a img {
@@ -231,11 +231,11 @@ p {
 .content {
   min-width: 760px;
   padding: 20px;
-  font-size: 16px;
+  font-size: 14px;
   box-sizing: border-box;
 }
 .content .content-sort li.type-select #type_detail {
-  margin-left: 107px!important;
+  margin-left: 95px!important;
 }
 .content .content-sort li.type-select #type_detail > span:nth-child(1) {
   margin-right: 10px!important;

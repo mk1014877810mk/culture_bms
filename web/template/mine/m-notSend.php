@@ -82,13 +82,11 @@
         </table>
       </div>
       <div class="data-page">
-        <span id="prev">&lt;</span>
-        <div class="page-detail">
-          <!-- 页码内容 -->
+        <div class="page-detail pagination" id="Pagination">
+          <!-- 页码位置 -->
         </div>
-        <span id="next">&gt;</span>
         <span>
-      跳至第<input id="insert_page" type="number">页
+      跳至第<input id="jump_page" type="number">页
     </span>
       </div>
     </div>
