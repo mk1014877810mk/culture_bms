@@ -19,7 +19,7 @@ $(function () {
           $('.sidebar ul.sidebar-list > li:nth-child(1) li:nth-child(2) a').css({
             'background-color': '#555658'
           });
-          if(from == 'audit'){
+          if (from == 'audit') {
             $('.nav').html('内容管理 / 未发布 / 审核');
             $('.audit-btn').css('visibility', 'visible');
           }
@@ -70,10 +70,20 @@ $(function () {
             }
             var html = template('phone_tpl', obj);
             $('.phone-content').html(html);
+            $('.phone-content').ready(function () {
+              var length = $('.phone-text').length;
+              for (var i = 0; i < length; i++) {
+                var text = $('.phone-text').eq(i).text();
+                if (text.indexOf('<br/>') != -1) {
+                  var textArr = text.split('<br/>');
+                  $('.phone-text').eq(i).html(textArr.join('<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'));
+                }
+              };
+            });
             that.clickEvent();
           }
         }
-      })
+      });
     },
     // 按钮点击事件
     clickEvent: function () {

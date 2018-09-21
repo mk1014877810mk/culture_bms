@@ -97,7 +97,11 @@
       <input type="checkbox">
     </td>
     <td><img src="{{ajaxUrl}}{{v.data_image}}" alt=""></td>
+    {{if v.data_type=='3'}}
+    <td><a href="{{v.data_video}}" target="_blank">{{v.data_title}}</a></td>
+    {{else}}
     <td><a href="./detail.php?n_id={{v.n_id}}&type={{v.data_type}}&from=title&show=02">{{v.data_title}}</a></td>
+    {{/if}}
     <td>{{v.user_name}}</td>
     <td>{{v.modify_time}}</td>
     <td>

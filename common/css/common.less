@@ -8,6 +8,12 @@
   -webkit-box-orient: vertical;
 }
 
+.one-txt-cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .input-text{
   width: 300px;
   height: 30px;
@@ -160,17 +166,19 @@
       a{
         display: block;
         padding: 10px;
-        padding-left: 64px;
+        padding-left: 60px;
         font-size: 14px;
         color: #fff;
         img{
-          width: 20px;
+          width: 16px;
           margin-right: 10px;
-          vertical-align: top;
+          margin-top: -3px;
+          vertical-align: middle;
         }
         img:nth-child(2){
           float: right;
           margin-right: 20px;
+          margin-top: 0px;
         }
       }
       a:hover{

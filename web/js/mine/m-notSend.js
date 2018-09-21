@@ -218,6 +218,8 @@ $(function () {
             window.location.href = './addArticle.php?status=1&n_id=' + dataNid;
           } else if (dataType == 2) { // 编辑视频
             window.location.href = './addVideo.php?status=1&n_id=' + dataNid;
+          } else if (dataType == 3) {
+            window.location.href = './transfer.php?status=1&n_id=' + dataNid;
           }
         } else if (dataId == 2) {      // 删除
           if (confirm('您确认删除吗？')) {
@@ -301,6 +303,7 @@ $(function () {
       function pageselectCallback(page) {
         currentPage = page + 1;
         that.setPaging(currentPage);
+        $('#Pagination').children('span').removeClass('active');
       }
 
       // 输入框跳转

@@ -1,0 +1,45 @@
+.sidebar{
+  ul.sidebar-list{
+    >li:nth-child(1) li:nth-child(2) a{
+      background-color: #555658;
+    }
+  }
+}
+.content{
+  .content-detail{
+    padding: 20px;
+    background-color: #fff;
+    .content-list{
+      width: 500px;
+      margin:0 auto;
+      >div{
+        span{
+          float: left;
+          width: 100px;
+          line-height: 40px;
+        }
+        >div{
+          display: inline-block;
+          width: 390px;
+          min-height: 40px;
+          line-height: 40px;
+          word-break: break-all;
+          &.img{
+            height: 150px;
+            img{
+              width: 280px;
+              height: 150px;
+            }
+          }
+        }
+      }
+      .submit{
+        margin-top: 20px;
+        input{
+          width: 90px;
+          height: 36px;
+        }
+      }
+    }
+  }
+}

@@ -23,7 +23,7 @@ select {
 }
 body {
   min-width: 1000px;
-  font: 12px "微软雅黑", HELVETICA;
+  font: 14px "微软雅黑", HELVETICA;
   background: #f0f2f5;
   -webkit-text-size-adjust: 100%;
 }
@@ -58,6 +58,11 @@ p {
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
+}
+.one-txt-cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .input-text {
   width: 300px;
@@ -198,18 +203,20 @@ p {
 .sidebar > ul.sidebar-list > li a {
   display: block;
   padding: 10px;
-  padding-left: 64px;
+  padding-left: 60px;
   font-size: 14px;
   color: #fff;
 }
 .sidebar > ul.sidebar-list > li a img {
-  width: 20px;
+  width: 16px;
   margin-right: 10px;
-  vertical-align: top;
+  margin-top: -3px;
+  vertical-align: middle;
 }
 .sidebar > ul.sidebar-list > li a img:nth-child(2) {
   float: right;
   margin-right: 20px;
+  margin-top: 0px;
 }
 .sidebar > ul.sidebar-list > li a:hover {
   background-color: #2E2F30;

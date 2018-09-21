@@ -1,0 +1,37 @@
+.sidebar ul.sidebar-list > li:nth-child(3) li:nth-child(1) a {
+  background-color: #555658;
+}
+.content .content-detail {
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+}
+.content .content-detail form {
+  width: 500px;
+  margin: 0 auto;
+}
+.content .content-detail form > div {
+  margin: 10px;
+}
+.content .content-detail form > div.tips {
+  color: #999;
+  font-size: 10px;
+}
+.content .content-detail form > div span {
+  float: left;
+  width: 100px;
+  margin-top: 6px;
+}
+.content .content-detail form > div img {
+  width: 300px;
+  height: 166px;
+  cursor: pointer;
+}
+.content .content-detail form > div textarea {
+  width: 300px;
+  height: 150px;
+  resize: none;
+  border-color: #ddd;
+  border-radius: 4px;
+  line-height: 20px;
+}

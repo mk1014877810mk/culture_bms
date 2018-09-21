@@ -147,7 +147,7 @@ $(function () {
         var currentIndex = 0; // 当前点击的数据索引
         var currentSort = $(this).data('sort');
         $('.phone-content-text').show();
-        $('#content_text').val(notEditText);
+        $('#content_text').val(notEditText.split('<br/>').join('\n'));
         for (let i = 0; i < phoneContentData.length; i++) {
           if (phoneContentData[i].sort == currentSort) {
             currentIndex = i;
@@ -164,6 +164,11 @@ $(function () {
           if (content.length == 0) {
             alert('文章内容不能为空！');
             return;
+          }
+          if (content.indexOf('\n') != -1) {
+            var textArr = content.split('\n');
+            content = textArr.join('<br/>');
+            $('#content_text').val(content);
           }
           var info = {
             index: currentIndex,
@@ -242,7 +247,7 @@ $(function () {
                 if (phoneContentData.length == 0) {
                   $('.phone-content-btn').css({
                     'display': 'none'
-                  })
+                  });
                 }
               }
             },
@@ -325,6 +330,10 @@ $(function () {
             if ($.trim(val) == "") {
               alert("输入内容不能为空！");
               return;
+            } else if (val.indexOf('\n') != -1) {// 手动换行
+              var textArr = val.split('\n');
+              val = textArr.join('<br/>');
+              $('#content_text').val(val);
             }
             var obj = {
               'data_type': 2,
@@ -332,6 +341,8 @@ $(function () {
               'sort': ++nSort,
               'content': val
             }
+            console.log($('#content_text').val());
+            // return;
             $("#text").ajaxSubmit({
               url: ajaxUrl + 'prestored',
               type: 'post',

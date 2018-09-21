@@ -88,6 +88,7 @@
           <div class="phone-text-bgc">
             <form action="" id="text">
               <textarea name="content" id="content_text" cols="30" rows="10" placeholder="请输入文章内容"></textarea>
+              <!-- <div class="text-tips">&nbsp;&nbsp;&nbsp;&nbsp;注：输入多行段落时，请在段落于段落之间添加&lt;br/&gt;</div> -->
             </form>
             <div class="btn">
               <input type="button" class="input-button blue" id="success" value="完成">

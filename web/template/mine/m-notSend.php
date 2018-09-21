@@ -58,6 +58,7 @@
       <div class="select-btn clearfix">
         <a class="dele-many show" id="del_sure">确认删除</a>
         <a class="dele-many" id="delAll">批量操作</a>
+        <a href="./transfer.php?status=0" class="dele-many blue">+ 转载文章</a>
         <a href="./addVideo.php?status=0" class="dele-many blue">+ 添加小视频</a>
         <a href="./addArticle.php?status=0" class="dele-many blue">+ 添加文章</a>
       </div>
@@ -100,10 +101,13 @@
       <input type="checkbox">
     </td>
     <td><img src="{{ajaxUrl}}{{v.data_image}}" alt=""></td>
+    {{if v.data_type=='3'}}
+    <td><a href="{{v.data_video}}" target="_blank">{{v.data_title}}</a></td>
+    {{else}}
     <td><a href="../platform/detail.php?n_id={{v.n_id}}&type={{v.data_type}}&from=title&show=11">{{v.data_title}}</a></td>
+    {{/if}}
     <td>{{if v.is_review==0}}未审核 {{else if v.is_review==2}}<span class='red-text'>被驳回</span> {{/if}}
     </td>
-    <!-- <td>asg</td> -->
     <td>{{v.modify_time}}</td>
     <td>
       <a href="javascript:;" data-id="1" data-type={{v.data_type}} data-n_id={{v.n_id}}>编辑</a>

@@ -293,6 +293,7 @@ $(function () {
       function pageselectCallback(page) {
         currentPage = page + 1;
         that.setPaging(currentPage);
+        $('#Pagination').children('span').removeClass('active');
       }
 
       // 输入框跳转
