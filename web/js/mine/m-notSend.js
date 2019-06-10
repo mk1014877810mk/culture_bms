@@ -76,29 +76,25 @@ $(function () {
         $(this).addClass('active').siblings().removeClass('active');
         var sFirst = $('.type-select-first span.active').data('id');
         var sSecond = $('.type-select span.active').data('c_id');
-        var sThird = $('.type-select-input input').val('');
+        var iFirst = $.trim($('.type-select-input input').eq(0).val());
+        var iSecond = $.trim($('.type-select-input input').eq(1).val());
+        var goNext = /^[1-2][0-9][0-9][0-9]-[0-1]{0,1}[0-9]-[0-3]{0,1}[0-9]$/.test(iSecond) || /^[1-2][0-9][0-9][0-9]-[0-1]{0,1}[0-9]$/.test(iSecond) || /^[1-2][0-9]{3}/.test(iSecond);
+        if (goNext) {
+          iSecond = that.formatTime(iSecond);
+        }
         var obj = {};
-        if (sFirst == 0 && sSecond == 0) {
-          currentPage = 1;
-          that.getInitData()
-        } else if (sFirst == 0 && sSecond != 0) {
+        currentPage = 1;
+        if (sFirst == '' && sSecond == '' && iFirst == '' && iSecond == '') {
+          that.getInitData();
+          return;
+        } else {
           obj = {
-            user_id,
-            own_cate: 2,
-            cate_type: sSecond
-          }
-        } else if (sFirst != 0 && sSecond == 0) {
-          obj = {
-            user_id,
-            own_cate: 1,
-            data_type: sFirst
-          }
-        } else if (sFirst != 0 && sSecond != 0) {
-          obj = {
-            user_id,
-            own_cate: '1,2',
             data_type: sFirst,
-            cate_type: sSecond
+            cate_type: sSecond,
+            user_name: iFirst,
+            date_time: iSecond,
+            is_review: 0,
+            user_id: user_id
           }
         }
         that.queryGroup(obj);
@@ -108,38 +104,27 @@ $(function () {
     inputType: function () {
       var that = this;
       $('.type-select-input input').off('input').on('input', function () {
-        $('.type-select-first span').eq(1).addClass('active').siblings().removeClass('active');
-        $('.type-select #type_detail span').eq(0).addClass('active').siblings().removeClass('active');
+        var sFirst = $('.type-select-first span.active').data('id');
+        var sSecond = $('.type-select span.active').data('c_id');
         var iFirst = $.trim($('.type-select-input input').eq(0).val());
         var iSecond = $.trim($('.type-select-input input').eq(1).val());
         var goNext = /^[1-2][0-9][0-9][0-9]-[0-1]{0,1}[0-9]-[0-3]{0,1}[0-9]$/.test(iSecond) || /^[1-2][0-9][0-9][0-9]-[0-1]{0,1}[0-9]$/.test(iSecond) || /^[1-2][0-9]{3}/.test(iSecond);
-        if (!goNext) {
-          return;
-        } else {
+        if (goNext) {
           iSecond = that.formatTime(iSecond);
         }
         var obj = {};
-        if (iFirst == '' && iSecond == '') {
-          currentPage = 1;
-          that.getInitData()
-        } else if (iFirst == '' && iSecond != '') {
+        currentPage = 1;
+        if (sFirst == '' && sSecond == '' && iFirst == '' && iSecond == '') {
+          that.getInitData();
+          return;
+        } else {
           obj = {
-            user_id,
-            own_cate: 3,
-            date_time: iSecond
-          }
-        } else if (iFirst != '' && iSecond == '') {
-          obj = {
-            user_id,
-            own_cate: 3,
-            user_name: iFirst
-          }
-        } else if (iFirst != '' && iSecond != '') {
-          obj = {
-            user_id,
-            own_cate: 3,
+            data_type: sFirst,
+            cate_type: sSecond,
             user_name: iFirst,
-            date_time: iSecond
+            date_time: iSecond,
+            is_review: 0,
+            user_id: user_id
           }
         }
         that.queryGroup(obj);
@@ -287,7 +272,6 @@ $(function () {
       $('th.many input').prop('checked', false);
     },
 
-
     // 加载页码并添加事件
     loadPage: function (count) {
       var that = this;
@@ -326,13 +310,11 @@ $(function () {
       });
     },
 
-
-
     // 组合查询数据
     queryGroup: function (obj) {
       var that = this;
       $.ajax({
-        url: ajaxUrl + 'mine/search',
+        url: ajaxUrl + 'platform/search',
         type: 'post',
         data: obj,
         success: function (res) {

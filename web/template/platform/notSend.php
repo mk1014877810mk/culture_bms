@@ -25,7 +25,7 @@
       <ul>
         <li class="type-select-first">
           <span class="select-type">所属类型：</span>
-          <span class="active" data-id="0" style='cursor:pointer;'>全部</span>
+          <span class="active" data-id="" style='cursor:pointer;'>全部</span>
           <span data-id="1" style='cursor:pointer;'>文章</span>
           <span data-id="2" style='cursor:pointer;'>小视频</span>
           <!-- <span>转发文章</span> -->
@@ -33,7 +33,7 @@
         <li class="type-select">
           <span class="type-name">所属类目：</span>
           <div id="type_detail">
-            <span class="active" data-c_id="0">全部</span>
+            <span class="active" data-c_id="">全部</span>
             <!-- <span>推荐</span> -->
           </div>
           <a class="up-or-down" data-status="1">展开 <img style="width:16px;margin-top:-4px;" src="../../../images/arrow-down.png" alt=""></a>
